@@ -1,0 +1,370 @@
+/* ===== NGOẠI KHOÁ SCHOOL WEBSITE – DEEP PINK LUXURY ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+/* ===== COLOR SYSTEM ===== */
+:root{
+  --bg:#fff6f9;
+  --pink:#c2185b;
+  --pink-dark:#880e4f;
+  --pink-light:#f3c1d8;
+  --text:#2b0f1c;
+  --text-soft:#6b3a4e;
+  --white:#ffffff;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{ text-decoration:none; color:inherit; }
+
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* ===== HEADER ===== */
+.header{
+  background:linear-gradient(90deg,var(--pink-dark),var(--pink));
+  padding:14px 0;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 10px 26px rgba(0,0,0,0.18);
+}
+
+.header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:900;
+  color:white;
+  letter-spacing:1.5px;
+}
+
+.nav a{
+  color:white;
+  font-weight:700;
+  margin-left:18px;
+  padding:8px 16px;
+  border-radius:999px;
+  transition:0.3s;
+}
+
+.nav a:hover{
+  background:rgba(255,255,255,0.25);
+}
+
+/* ===== BANNER ===== */
+.banner{
+  background:url("./assets/img/banner.jpg") no-repeat center/cover;
+  padding:120px 0;
+  text-align:center;
+  position:relative;
+  filter:saturate(1.15) contrast(1.1);
+}
+
+/* ánh sáng trung tâm */
+.banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.28),
+    transparent 60%
+  );
+  z-index:0;
+}
+
+/* lớp phủ KHÔNG làm chìm ảnh */
+.banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25),
+    rgba(136,14,79,0.55)
+  );
+  z-index:0;
+}
+
+.banner-content{
+  position:relative;
+  z-index:1;
+  color:white;
+}
+
+.banner-content h1{
+  font-size:52px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.banner-content p{
+  font-size:18px;
+  max-width:760px;
+  margin:16px auto 0;
+  opacity:0.95;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:26px;
+  background:white;
+  color:var(--pink-dark);
+  padding:12px 28px;
+  border-radius:999px;
+  font-weight:900;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 28px rgba(0,0,0,0.25);
+}
+
+/* ===== SLOGAN ===== */
+.slogan{
+  background:white;
+  padding:34px 0;
+  margin-top:-40px;
+  border-radius:28px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.15);
+}
+
+.row{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.block_3{
+  flex:1;
+  min-width:240px;
+  background:linear-gradient(180deg,var(--pink-light),#ffffff);
+  border:1px solid #f0c9dc;
+  padding:26px;
+  border-radius:24px;
+  text-align:center;
+  transition:0.35s;
+}
+
+.block_3:hover{
+  transform:translateY(-10px);
+}
+
+.block_3 h3{
+  color:var(--pink-dark);
+  font-size:20px;
+  margin-bottom:6px;
+}
+
+.block_3 p{
+  color:var(--text-soft);
+  font-weight:600;
+}
+
+/* ===== MAIN ===== */
+.main{
+  margin-top:36px;
+  padding-bottom:30px;
+}
+
+.section-title{
+  margin:30px 0 18px;
+  font-size:26px;
+  font-weight:900;
+  color:var(--pink-dark);
+  letter-spacing:1px;
+}
+
+/* ===== GRID ===== */
+.grid-2x2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid #f1d3e1;
+  box-shadow:0 16px 30px rgba(0,0,0,0.12);
+  transition:0.35s;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  transition:0.45s;
+}
+
+.card:hover img{
+  transform:scale(1.1);
+}
+
+.card-body{
+  padding:20px 22px 24px;
+}
+
+.card h4{
+  display:inline-block;
+  background:linear-gradient(90deg,var(--pink-dark),var(--pink));
+  color:white;
+  padding:6px 18px;
+  border-radius:999px;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--text-soft);
+  font-size:14px;
+}
+
+/* ===== QUOTE ===== */
+.quote-box{
+  margin-top:32px;
+  padding:26px;
+  border-radius:26px;
+  background:linear-gradient(135deg,var(--pink-light),#ffffff);
+  border:1px solid #f0c9dc;
+  box-shadow:0 16px 30px rgba(0,0,0,0.12);
+  text-align:center;
+}
+
+.quote-box p{
+  font-size:18px;
+  font-weight:800;
+}
+
+.quote-box span{
+  display:block;
+  margin-top:14px;
+  font-style:italic;
+  font-weight:800;
+  color:var(--pink-dark);
+}
+
+/* ===== GOALS ===== */
+.goals{
+  margin-top:22px;
+  background:white;
+  border-radius:24px;
+  padding:26px;
+  border:1px solid #f1d3e1;
+  box-shadow:0 16px 30px rgba(0,0,0,0.12);
+}
+
+.goals ul{
+  margin-top:10px;
+  padding-left:18px;
+  color:var(--text-soft);
+  font-weight:700;
+}
+
+.goals li{ margin:8px 0; }
+
+/* ===== VIDEO ===== */
+.video-box{
+  margin-top:26px;
+  background:white;
+  border-radius:26px;
+  padding:20px;
+  border:1px solid #f1d3e1;
+  box-shadow:0 18px 36px rgba(0,0,0,0.22);
+}
+
+.video-box video{
+  width:100%;
+  border-radius:20px;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:linear-gradient(90deg,var(--pink-dark),var(--pink));
+  color:white;
+  padding:20px 0;
+  margin-top:30px;
+}
+
+.footer .container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+}
+
+.footer a{
+  font-weight:800;
+  margin-left:12px;
+}
+
+.footer a:hover{ text-decoration:underline; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .banner-content h1{ font-size:36px; }
+  .grid-2x2{ grid-template-columns:1fr; }
+}
+/* ===== BANNER RIÊNG TRANG THÔNG TIN ===== */
+.banner-thongtin{
+  background: url("./assets/img/banner-thongtin.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 90px 0;
+  position: relative;
+}
+
+.banner-thongtin::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.45);
+}
+
+.banner-thongtin .banner-content{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.banner-thongtin h1{
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.banner-thongtin p{
+  font-size: 18px;
+  margin-top: 8px;
+  opacity: 0.95;
+}
+
+
+
+
